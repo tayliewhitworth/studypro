@@ -1,0 +1,23 @@
+.footer {
+    background-color: var(--periwinkle);
+    min-height: 100px;
+    padding: 1rem 1.5rem;
+    color: var(--white-color);
+    outline-style: dashed;
+    outline-width: 2px;
+    outline-offset: -5px;
+    outline-color: var(--bg-accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    font-family: var(--header);
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-size: 1rem;
+}

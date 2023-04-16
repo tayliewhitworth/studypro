@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  /* colors */
+  --green: #70cf98;
+  --blue: #3e6dfb;
+  --gradient-blue: #696ffe;
+  --light-gray-accent: rgb(212, 212, 212);
+  /* use gradient with background: */
+  --linear-gradient: linear-gradient(
+    45deg,
+    var(--blue),
+    var(--gradient-blue)
+  );
+  --orange: #fea83c;
+
+  --darker-black: #3a4955;
+  --lighter-blue: rgba(184, 202, 255, .5);
+  --lighter-orange:rgba(253, 207, 151, 0.5);
+  --background-color: #f6f7fb;
+
+  /* new testing colors for a darkmode */
+  --periwinkle: #707dff;
+  --yellow: #fad85d;
+  --yellow-shadow: #f69e5c;
+  --violet: #f2a0ff;
+  --light-green: #add753;
+  --turquoise: #52d7a6;
+  --black-bg: #1b1b19;
+  --bg-accent: #242424;
+  --white-color: #fff;
+  --gray-color: #8d8d8d;
+
+  --main-background-image: linear-gradient(#242424 2px, transparent 2px), linear-gradient(to right, #242424 2px, transparent 2px);
+  --main-background-size: 81px 81px;
+  --main-background-color: #1b1b19;
+
+  --header: 'Bebas Neue', cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  /* color: var(--darker-black);
+  background-color: var(--background-color); */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.errmsg {
+  color: red;
+}
+
+.offscreen {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lighter-blue);
+  border-radius: 8px;
+}
+
+#root {
+  background-color: var(--main-background-color);
+  background-image: var(--main-background-image);
+  background-size: var(--main-background-size);
+}

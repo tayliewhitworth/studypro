@@ -1,0 +1,109 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: all .2s ease-in-out;
+}
+
+
+.header-section {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+}
+
+.menu-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.menu-section button {
+    font-size: 1.75rem;
+    color: var(--gray-color);
+}
+
+.menu-section button:hover {
+    color: var(--periwinkle);
+}
+
+.nav-items-parent {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-items {
+    position: absolute;
+    inset: 0;
+    transform: translate(100px, 40px);
+    background: var(--linear-gradient);
+    /* background-color: var(--periwinkle); */
+    list-style: none;
+    min-height: 600px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 10;
+    transition: transform .2s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.nav-items.show {
+    transform: translate(-130px, 40px);
+}
+
+.logout-btn-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.logout-btn-item .logout-btn {
+    font-size: 1rem;
+    color: var(--periwinkle);
+    font-weight: 600;
+    background-color: var(--white-color);
+    border-radius: 50px;
+    padding: .5rem 1rem;
+    transition: all .2s ease-in-out;
+}
+
+.logout-btn-item .logout-btn:hover {
+    box-shadow: 0px 0px 5px var(--light-green);
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: whitesmoke;
+    -webkit-text-fill-color: whitesmoke;
+    transition: all .1s ease-in;
+}
+
+.nav-items li a:hover {
+    font-weight: 600;
+}
+
+@media not (hover: hover) {
+    .nav-items li a {
+        font-weight: bold;
+    }
+}

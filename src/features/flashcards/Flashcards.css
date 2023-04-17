@@ -32,8 +32,10 @@
 }
 
 .sort-section select {
+  -webkit-background-color: var(--periwinkle);
   background-color: var(--periwinkle);
   padding: 0.5rem;
+  -webkit-border-radius: 50px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -97,8 +99,8 @@
   outline-offset: -5px;
   outline-style: dashed;
   outline-width: 2px;
-  border-radius: 50px;
   -webkit-border-radius: 50px;
+  border-radius: 50px;
   padding: 0.5rem;
   max-width: fit-content;
   font-size: 1rem;
@@ -108,8 +110,8 @@
 .card .back {
   position: absolute;
   padding: 1rem;
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   text-align: center;
 }
 

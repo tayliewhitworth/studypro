@@ -154,8 +154,8 @@
 
 .flashcard-img {
     width: 150px;
-    filter: invert(100%);
     -webkit-filter: invert(100%);
+    filter: invert(100%);
 }
 
 .topic span {

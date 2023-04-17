@@ -123,6 +123,7 @@
 @media (max-width: 600px) {
   .card.flip {
     --translate-y: -2px;
+    --rotate-y: 180deg;
   }
 
   .flashcard-topic {

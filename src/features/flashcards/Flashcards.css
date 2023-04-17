@@ -121,6 +121,10 @@
 
 /* testing out a strategy for iphone */
 @media (max-width: 500px) {
+  .flashcard-topic {
+    outline: none;
+  }
+
   .card .front,
   .card .back {
     position: absolute;
@@ -134,13 +138,18 @@
     transform: rotateY(180deg) translateZ(1px);
   }
 
-  .card.flip .front {
+  .card.flip {
+    --rotate-y: 180deg;
+    transform: translateZ(1px);
+  }
+
+  /* .card.flip .front {
     transform: rotateY(180deg) translateZ(1px);
   }
 
   .card.flip .back {
     transform: rotateY(0deg) translateZ(1px);
-  }
+  } */
 }
 
 .card-edit {

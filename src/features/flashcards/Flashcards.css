@@ -120,36 +120,16 @@
 }
 
 /* testing out a strategy for iphone */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  .card.flip {
+    --translate-y: -2px;
+  }
+
   .flashcard-topic {
     outline: none;
+    border: none;
   }
 
-  .card .front,
-  .card .back {
-    position: absolute;
-    padding: 1rem;
-    text-align: center;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .card .back {
-    transform: rotateY(180deg) translateZ(1px);
-  }
-
-  .card.flip {
-    --rotate-y: 180deg;
-    transform: translateZ(1px);
-  }
-
-  /* .card.flip .front {
-    transform: rotateY(180deg) translateZ(1px);
-  }
-
-  .card.flip .back {
-    transform: rotateY(0deg) translateZ(1px);
-  } */
 }
 
 .card-edit {

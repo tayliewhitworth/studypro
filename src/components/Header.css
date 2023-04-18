@@ -76,6 +76,7 @@ button {
 
 @media (max-width: 600px) {
     .nav-items {
+        -webkit-transform: translateX(200px);
         transform: translateX(200px);
     }
 }

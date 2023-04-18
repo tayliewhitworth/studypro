@@ -123,13 +123,13 @@
 @media (max-width: 600px) {
   .card.flip {
     --translate-y: -2px;
+    --rotate-y: 180deg;
   }
 
   .flashcard-topic {
     outline: none;
     border: none;
   }
-
 }
 
 .card-edit {

@@ -74,6 +74,12 @@ button {
     transform: translate(-130px, 40px);
 }
 
+@media (max-width: 600px) {
+    .nav-items {
+        transform: translateX(200px);
+    }
+}
+
 .logout-btn-item {
     display: flex;
     align-items: center;

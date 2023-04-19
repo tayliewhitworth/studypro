@@ -76,7 +76,9 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Inter", sans-serif;
+  -webkit-overflow-x: hidden;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   /* color: var(--darker-black);
   background-color: var(--background-color); */
 }

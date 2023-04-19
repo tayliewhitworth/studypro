@@ -78,6 +78,13 @@ button {
     .nav-items {
         -webkit-transform: translateX(200px);
         transform: translateX(200px);
+        display: none;
+    }
+
+    .nav-items.show {
+        -webkit-transform: translate(-100px, 40px);
+        transform: translate(-100px, 40px);
+        display: flex;
     }
 }
 

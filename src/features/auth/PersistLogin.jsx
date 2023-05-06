@@ -57,7 +57,11 @@ const PersistLogin = () => {
         content = <Outlet />;
       }
 
-  return content
+  return (
+    <div className="h-full">
+      {content}
+    </div>
+  )
 }
 
 export default PersistLogin

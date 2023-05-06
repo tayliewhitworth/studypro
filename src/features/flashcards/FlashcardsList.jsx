@@ -20,8 +20,8 @@ const FlashcardsList = () => {
     isSuccess,
     isError,
     error,
-  } = useGetFlashcardsQuery(null, {
-    pollingInterval: 60000,
+  } = useGetFlashcardsQuery("flashcardsList", {
+    pollingInterval: 15000,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true,
   });

@@ -37,7 +37,7 @@ const FavTopics = () => {
                 <img className='flashcard-img' src={flashcard} alt='icon' />
               </div>
               <div>
-                <span>{topic.flashcards.length}</span>
+                <span onClick={handleClick}>{topic.flashcards.length}</span>
                 <p className='accent'>Flashcards</p>
               </div>
             </div>

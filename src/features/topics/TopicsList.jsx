@@ -40,8 +40,8 @@ const TopicsList = () => {
     isSuccess,
     isError,
     error,
-  } = useGetTopicsQuery(null, {
-    pollingInterval: 60000,
+  } = useGetTopicsQuery('topicsList', {
+    pollingInterval: 15000,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true,
   });

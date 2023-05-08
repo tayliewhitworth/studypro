@@ -173,6 +173,9 @@ const ReviewFlashcards = () => {
 
     content = (
       <div>
+        <div>
+          {currentIndex + 1} / {filteredCardContent.length}
+        </div>
         {currentIndex < filteredCardContent.length ? (
           <div className="review-card">
             <div

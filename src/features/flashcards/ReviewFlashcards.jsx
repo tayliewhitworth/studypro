@@ -124,7 +124,17 @@ const ReviewFlashcards = () => {
         </select>
         <div className="sort-label">
           {currentIndex + 1 > filteredCardContent.length ? (
-            <p className="review-complete">Review Complete!</p>
+            <div>
+              <p className="review-complete">Review Complete!</p>
+              <span>
+                <button
+                  className="review-btn"
+                  onClick={() => setCurrentIndex(0)}
+                >
+                  Restart Session?
+                </button>
+              </span>
+            </div>
           ) : (
             `${currentIndex + 1} / ${filteredCardContent.length}`
           )}
@@ -180,9 +190,6 @@ const ReviewFlashcards = () => {
 
     content = (
       <div>
-        <div>
-          {currentIndex + 1} / {filteredCardContent.length}
-        </div>
         {currentIndex < filteredCardContent.length ? (
           <div className="review-card">
             <div

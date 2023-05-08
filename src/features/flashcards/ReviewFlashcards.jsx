@@ -99,6 +99,10 @@ const ReviewFlashcards = () => {
       );
     }
 
+    const filteredCardContent = reviewCard.filter(
+      (card) => searchTerm === "" || card.topicName === searchTerm
+    );
+
     searchContent = (
       <div className="sort-section">
         <label className="sort-label" htmlFor="searchTerm">
@@ -118,11 +122,14 @@ const ReviewFlashcards = () => {
             )
           )}
         </select>
+        <div className="sort-label">
+          {currentIndex + 1 > filteredCardContent.length ? (
+            <p className="review-complete">Review Complete!</p>
+          ) : (
+            `${currentIndex + 1} / ${filteredCardContent.length}`
+          )}
+        </div>
       </div>
-    );
-
-    const filteredCardContent = reviewCard.filter(
-      (card) => searchTerm === "" || card.topicName === searchTerm
     );
 
     const handleEasyClick = async () => {

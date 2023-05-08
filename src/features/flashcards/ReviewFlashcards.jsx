@@ -54,6 +54,12 @@ const ReviewFlashcards = () => {
   let content;
   let searchContent;
 
+  const restartSession = () => {
+    setCurrentIndex(0);
+    setGotRight(0);
+    setGotWrong(0);
+  };
+
   if (isLoading || updateLoading)
     content = (
       <div className="loading">
@@ -127,10 +133,7 @@ const ReviewFlashcards = () => {
             <div>
               <p className="review-complete">Review Complete!</p>
               <span>
-                <button
-                  className="review-btn"
-                  onClick={() => setCurrentIndex(0)}
-                >
+                <button className="review-btn" onClick={restartSession}>
                   Restart Session?
                 </button>
               </span>

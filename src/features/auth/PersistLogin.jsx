@@ -6,62 +6,60 @@ import { useSelector } from "react-redux";
 import { selectCurrentToken } from "./authSlice";
 
 const PersistLogin = () => {
-    const [persist] = usePersist()
-    const token = useSelector(selectCurrentToken)
-    const effectRan = useRef(false)
+  const [persist] = usePersist();
+  const token = useSelector(selectCurrentToken);
+  const effectRan = useRef(false);
 
-    const [trueSuccess, setTrueSuccess] = useState(false);
+  const [trueSuccess, setTrueSuccess] = useState(false);
 
-    const [refresh, { isUninitialized, isLoading, isSuccess, isError, error }] =
+  const [refresh, { isUninitialized, isLoading, isSuccess, isError, error }] =
     useRefreshMutation();
 
-    useEffect(() => {
-        if (effectRan.current === true || process.env.NODE_ENV !== 'development') {
-            const verifyRefreshToken = async () => {
-                console.log('verifying refresh token')
-                try {
-                    await refresh()
-                    setTrueSuccess(true)
-                } catch (err) {
-                    console.log(err)
-                }
-            }
-
-            if (!token && persist) verifyRefreshToken()
+  useEffect(() => {
+    if (effectRan.current === true || process.env.NODE_ENV !== "development") {
+      const verifyRefreshToken = async () => {
+        console.log("verifying refresh token");
+        try {
+          await refresh();
+          setTrueSuccess(true);
+        } catch (err) {
+          console.log(err);
         }
+      };
 
-        return () => (effectRan.current = true)
-    }, [persist, refresh, token])
+      if (!token && persist) verifyRefreshToken();
+    }
 
-    let content
-    if (!persist) {
-        console.log("no persist");
-        content = <Outlet />;
-      } else if (isLoading) {
-        console.log("loading");
-        content = <p>Loading...</p>
-      } else if (isError) {
-        console.log("error");
-        content = (
-          <p className="errmsg">
-            {`${error?.data?.message} - `}
-            <Link to="/">Please login again</Link>
-          </p>
-        );
-      } else if (isSuccess && trueSuccess) {
-        console.log("success");
-        content = <Outlet />;
-      } else if (token && isUninitialized) {
-        console.log("token and uninit");
-        console.log(isUninitialized);
-        content = <Outlet />;
-      }
+    return () => (effectRan.current = true);
 
-  return (
-    <div className="h-full">
-      {content}
-    </div>
-  )
-}
+    // eslint-disable-next-line
+  }, []);
 
-export default PersistLogin
+  let content;
+  if (!persist) {
+    console.log("no persist");
+    content = <Outlet />;
+  } else if (isLoading) {
+    console.log("loading");
+    content = <p>Loading...</p>;
+  } else if (isError) {
+    console.log("error");
+    content = (
+      <p className="errmsg">
+        {`${error?.data?.message} - `}
+        <Link to="/">Please login again</Link>
+      </p>
+    );
+  } else if (isSuccess && trueSuccess) {
+    console.log("success");
+    content = <Outlet />;
+  } else if (token && isUninitialized) {
+    console.log("token and uninit");
+    console.log(isUninitialized);
+    content = <Outlet />;
+  }
+
+  return <div className="h-full">{content}</div>;
+};
+
+export default PersistLogin;
